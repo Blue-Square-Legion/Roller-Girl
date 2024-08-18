@@ -5,9 +5,9 @@ public class MoveTwo : MonoBehaviour
 {
     float horizontal;
 float speed = 8f;
-float jumpPower = 5f;
+float jumpPower =5f;
 bool isFacingRight = true;
-float acceleration = 2;
+float acceleration = 3f;
 [SerializeField] private Rigidbody2D rb;
 [SerializeField] private Transform groundCheck;
 [SerializeField] private LayerMask groundLayer;
