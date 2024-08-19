@@ -4,10 +4,10 @@ using UnityEngine;
 public class MoveTwo : MonoBehaviour
 {
     float horizontal;
-float speed = 8f;
+float speed = 3f;
 float jumpPower =5f;
 bool isFacingRight = true;
-float acceleration = 3f;
+float acceleration = 2f;
 [SerializeField] private Rigidbody2D rb;
 [SerializeField] private Transform groundCheck;
 [SerializeField] private LayerMask groundLayer;
@@ -25,13 +25,9 @@ if (Input.GetKey(KeyCode.Space))
 
     void FixedUpdate()
     {
-        if (isFacingRight)  
-        rb.velocity = new Vector2(horizontal * speed * acceleration, rb.velocity.y);
-        else
-         rb.velocity = new Vector2(horizontal * speed , rb.velocity.y);
-        if(!isFacingRight)
-            rb.velocity = new Vector2(horizontal * speed * acceleration, rb.velocity.y);
-        else
-            rb.velocity = new Vector2(horizontal * speed, rb.velocity.y);
+       
+        rb.velocity = new Vector2(-horizontal * speed * acceleration, rb.velocity.y);
+       
+      
     }
 }
