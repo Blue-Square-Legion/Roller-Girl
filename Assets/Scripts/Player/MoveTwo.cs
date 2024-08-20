@@ -15,7 +15,7 @@ float acceleration = 2f;
     [SerializeField] private Rigidbody2D rb;
 [SerializeField] private Transform groundCheck;
 [SerializeField] private LayerMask groundLayer;
-    GameObject player;
+   public GameObject player;
     bool grounded = false;
     Vector2 facingLeft;
     
@@ -71,8 +71,8 @@ public virtual void Flip()
         rb.velocity = new Vector2(horizontal * speed * acceleration, rb.velocity.y);
 
         if (horizontal > 0)
-            gameObject.transform.localScale = new Vector3(1, 1, 1);
+            gameObject.transform.localScale = new Vector3(.5f, .5f, .5f);
         if (horizontal < 0)
-            gameObject.transform.localScale = new Vector3(-1, 1, 1);
+            gameObject.transform.localScale = new Vector3(-.5f, .5f, .5f);
 }
 }
