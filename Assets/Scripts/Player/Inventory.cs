@@ -53,7 +53,7 @@ public class Inventory : MonoBehaviour
     {
 
       
-        ItemsText.text = num.ToString();
+        ItemsText.text = num.ToString()+" items";
     }
 
     void Update()
@@ -70,9 +70,9 @@ public class Inventory : MonoBehaviour
         if (Input.GetKey(KeyCode.L) && give)
         {
 
-            Debug.Log(num);
-            Debug.Log(ItemsText);
-            num =num - 1;
+            if (num >= 1)
+                num = num - 1;
+           
 
             Debug.Log("L");
         }
