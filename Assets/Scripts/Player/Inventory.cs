@@ -7,6 +7,8 @@ using Unity.VisualScripting;
 using System;
 
 using UnityEditor.Experimental;
+using UnityEngine.SceneManagement;
+
 
 public class Inventory : MonoBehaviour
 {
@@ -18,8 +20,9 @@ public class Inventory : MonoBehaviour
     bool recieve = false;
     bool give = false;
     // Start is called before the first frame update
-    float seconds = 0;
-
+    float seconds = 100;
+    bool timeUp = false;
+ 
     void Start()
     {
         if (!ItemsText)
@@ -68,8 +71,12 @@ public class Inventory : MonoBehaviour
     {
         if (seconds <= 100)
         {
-            _timeText.text = seconds.ToString();
-            seconds= seconds+1*Time.deltaTime;
+            _timeText.text = UnityEngine.Mathf.Round(seconds).ToString();
+            if (UnityEngine.Mathf.Round(seconds).ToString() == "0")
+                timeUp = true;
+          seconds -= Time.deltaTime;
+            if (seconds == 0)
+                timeUp = true;
         }
 
         if (Input.GetMouseButtonDown(0) && recieve)
@@ -83,6 +90,7 @@ public class Inventory : MonoBehaviour
                 num = num - 1;
         }
         Items(num);
-
+        if(timeUp)
+            SceneManager.LoadScene("Menue");
     }
 }
