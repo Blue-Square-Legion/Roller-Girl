@@ -8,7 +8,7 @@ public class PlayerMovement : MonoBehaviour
 {
     float horizontal;
     [SerializeField] float speed = 5f;
-    [SerializeField] float jumpPower = 24f;
+    [SerializeField] float jumpPower = 5f;
     bool isFacingRight = true;
     [SerializeField] float acceleration = 2f;
 
@@ -41,14 +41,14 @@ public class PlayerMovement : MonoBehaviour
         {
             transform.position = new UnityEngine.Vector2(leftSideOfScreenInWorld, transform.position.y);
         }
-        else if (screenPos.y > Screen.height && rb.velocity.y > 0)
-        {
-            transform.position = new UnityEngine.Vector2(transform.position.x, bottomOfScreenInWorld);
-        }
-        else if (screenPos.y <= 0 && rb.velocity.y < 0)
-        {
-            transform.position = new UnityEngine.Vector2(transform.position.x, TopOfScreenInWorld);
-        }
+       // else if (screenPos.y > Screen.height && rb.velocity.y > 0)
+       // {
+       //     transform.position = new UnityEngine.Vector2(transform.position.x, bottomOfScreenInWorld);
+     //   }
+      //  else if (screenPos.y <= 0 && rb.velocity.y < 0)
+      //  {
+        //    transform.position = new UnityEngine.Vector2(transform.position.x, TopOfScreenInWorld);
+       // }
 
 
 
@@ -69,9 +69,7 @@ public class PlayerMovement : MonoBehaviour
         }
 
         Flip();
-        if(Input.GetKey(KeyCode.P))
-        rb.transform.position = new UnityEngine.Vector2(-rb.transform.position.x, rb.transform.position.y);
-
+      
     }
 
     void FixedUpdate()
@@ -82,7 +80,7 @@ public class PlayerMovement : MonoBehaviour
 
     private bool IsGrounded()
     {
-        return Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
+        return Physics2D.OverlapCircle(groundCheck.position, 0.16f, groundLayer);
     }
 
     private void Flip()
