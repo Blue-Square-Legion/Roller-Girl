@@ -16,13 +16,14 @@ public class Inventory : MonoBehaviour
     public
     TextMeshProUGUI _timeText;
     public TextMeshProUGUI ItemsText;
+    float f = 8f;
     float num = 0;
     bool recieve = false;
     bool give = false;
     // Start is called before the first frame update
     float seconds = 100;
     bool timeUp = false;
- 
+    
     void Start()
     {
         if (!ItemsText)
@@ -66,15 +67,20 @@ public class Inventory : MonoBehaviour
       
         ItemsText.text = num.ToString()+" items";
     }
+    public IEnumerator Show()
+    {
+        SceneManager.LoadScene("ScoreScene");
+        yield return new WaitForSeconds(f);   
+    }
 
     void Update()
     {
-        if (seconds <= 100)
+        if (seconds <= 100&& seconds>=0)
         {
-            _timeText.text = UnityEngine.Mathf.Round(seconds).ToString();
-            if (UnityEngine.Mathf.Round(seconds).ToString() == "0")
-                timeUp = true;
-          seconds -= Time.deltaTime;
+            _timeText.text = UnityEngine.Mathf.RoundToInt(seconds).ToString();
+            seconds -= Time.deltaTime;
+            if (UnityEngine.Mathf.RoundToInt(seconds).ToString() == "0")
+                StartCoroutine(Show());  
             if (seconds == 0)
                 timeUp = true;
         }
@@ -90,7 +96,6 @@ public class Inventory : MonoBehaviour
                 num = num - 1;
         }
         Items(num);
-        if(timeUp)
-            SceneManager.LoadScene("Menue");
+      
     }
 }
