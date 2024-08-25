@@ -9,6 +9,7 @@ public class ScoreScript : MonoBehaviour
 
     public TextMeshProUGUI ScoreText;
     int score;
+    float second2 = 20f;
     // Start is called before the first frame update
     void Start()
     {
@@ -29,8 +30,13 @@ public class ScoreScript : MonoBehaviour
         if (score == 0)
         SetScore(10);
      int x=   GetScore(score);
-        ScoreText.text = "The score is : "+ x.ToString(); 
-        SceneManager.LoadScene("Menue");
-
+        ScoreText.text = "The score is : "+ x.ToString();
+        if (second2 <= 20)
+        {
+            second2 -= Time.deltaTime;
+            SceneManager.GetSceneByBuildIndex(1);
+            if(second2<=8 ) 
+            SceneManager.LoadScene("Menue");
+        }
     }
 }

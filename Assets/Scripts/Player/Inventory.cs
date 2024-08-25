@@ -16,7 +16,7 @@ public class Inventory : MonoBehaviour
     public
     TextMeshProUGUI _timeText;
     public TextMeshProUGUI ItemsText;
-    float f = 8f;
+    float f = 15f;
     float num = 0;
     bool recieve = false;
     bool give = false;
@@ -75,7 +75,7 @@ public class Inventory : MonoBehaviour
 
     void Update()
     {
-        if (seconds <= 100&& seconds>=0)
+        if (seconds <= 100 && seconds>=0)
         {
             _timeText.text = UnityEngine.Mathf.RoundToInt(seconds).ToString();
             seconds -= Time.deltaTime;
