@@ -21,7 +21,7 @@ public class Inventory : MonoBehaviour
     bool recieve = false;
     bool give = false;
     // Start is called before the first frame update
-    float seconds = 100;
+    float seconds = 10;
     bool timeUp = false;
     
     void Start()
@@ -75,7 +75,7 @@ public class Inventory : MonoBehaviour
 
     void Update()
     {
-        if (seconds <= 100 && seconds>=0)
+        if (seconds <= 10 && seconds>=0)
         {
             _timeText.text = UnityEngine.Mathf.RoundToInt(seconds).ToString();
             seconds -= Time.deltaTime;
