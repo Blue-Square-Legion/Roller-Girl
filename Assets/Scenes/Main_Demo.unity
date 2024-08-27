@@ -206,7 +206,7 @@ GameObject:
   - component: {fileID: 318325545}
   - component: {fileID: 318325544}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: Time
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -842,6 +842,52 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &788837221
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 788837222}
+  - component: {fileID: 788837223}
+  m_Layer: 0
+  m_Name: GameManger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &788837222
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 788837221}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &788837223
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 788837221}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4384e4b014d65a344a2661e5c490d88c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _timeText: {fileID: 318325544}
+  ItemsText: {fileID: 1791972694}
 --- !u!1 &792926262
 GameObject:
   m_ObjectHideFlags: 3
@@ -980,7 +1026,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4548450086750425304, guid: 35092ae5ffdf3164584731ad2be20061, type: 3}
       propertyPath: m_Name
-      value: NPC (1)
+      value: NPC_2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1197,7 +1243,7 @@ GameObject:
   - component: {fileID: 1791972695}
   - component: {fileID: 1791972694}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: Items
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1656,12 +1702,16 @@ PrefabInstance:
       value: HUB
       objectReference: {fileID: 0}
     - target: {fileID: 7692134761299340114, guid: d3de00e9cd21ff944a3c46109847d4dc, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 4.0669956
+      objectReference: {fileID: 0}
+    - target: {fileID: 7692134761299340114, guid: d3de00e9cd21ff944a3c46109847d4dc, type: 3}
       propertyPath: m_LocalPosition.x
       value: -7.4
       objectReference: {fileID: 0}
     - target: {fileID: 7692134761299340114, guid: d3de00e9cd21ff944a3c46109847d4dc, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.89
+      value: 1.0228
       objectReference: {fileID: 0}
     - target: {fileID: 7692134761299340114, guid: d3de00e9cd21ff944a3c46109847d4dc, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1780,3 +1830,4 @@ SceneRoots:
   - {fileID: 1948595984}
   - {fileID: 154161160}
   - {fileID: 863566488}
+  - {fileID: 788837222}

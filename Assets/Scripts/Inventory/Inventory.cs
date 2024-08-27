@@ -21,14 +21,13 @@ public class Inventory : MonoBehaviour
     bool recieve = false;
     bool give = false;
     // Start is called before the first frame update
-    float seconds = 10;
+    float seconds = 30;
     bool timeUp = false;
     
     void Start()
     {
         if (!ItemsText)
             ItemsText = GetComponent<TextMeshProUGUI>();
-
     }
 
     // Update is called once per frame
@@ -46,6 +45,7 @@ public class Inventory : MonoBehaviour
             give = true;
         }
     }
+
     void OnTriggerExit2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("recieve"))
@@ -63,10 +63,9 @@ public class Inventory : MonoBehaviour
 
     void Items(float num)
     {
-
-      
         ItemsText.text = num.ToString()+" items";
     }
+
     public IEnumerator Show()
     {
         SceneManager.LoadScene("ScoreScene");
@@ -75,7 +74,8 @@ public class Inventory : MonoBehaviour
 
     void Update()
     {
-        if (seconds <= 10 && seconds>=0)
+
+        if (seconds <= 30 && seconds>=0)
         {
             _timeText.text = UnityEngine.Mathf.RoundToInt(seconds).ToString();
             seconds -= Time.deltaTime;
@@ -87,15 +87,20 @@ public class Inventory : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0) && recieve)
         {
-            num = num + 5;         
+            if (num < 5) 
+            {
+                num = num + 5;
+            }
         }
+
         Items(num);
+
         if (Input.GetMouseButtonDown(0) && give)
         {
             if (num >= 1)
                 num = num - 1;
         }
+
         Items(num);
-      
     }
 }

@@ -24,11 +24,11 @@ public class ScoreScript : MonoBehaviour
     }
     public void Menu()
     {
-        SceneManager.LoadScene("Menue");
+        SceneManager.LoadScene("Menu");
     }
     public void Main_Demo()
     {
-        SceneManager.LoadScene("Main-Demo");
+        SceneManager.LoadScene("Main_Demo");
     }
 
     public void SetScore(int scoreUpdate)
