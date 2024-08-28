@@ -8,10 +8,13 @@ using System;
 
 using UnityEditor.Experimental;
 using UnityEngine.SceneManagement;
+using UnityEditor.Rendering;
+using static UnityEngine.PlayerLoop.EarlyUpdate;
 
 
 public class Inventory : MonoBehaviour
 {
+    public static int score;
     [SerializeField]
     public
     TextMeshProUGUI _timeText;
@@ -23,11 +26,10 @@ public class Inventory : MonoBehaviour
     // Start is called before the first frame update
     float seconds = 30;
     bool timeUp = false;
-    
+   
     void Start()
     {
-        if (!ItemsText)
-            ItemsText = GetComponent<TextMeshProUGUI>();
+        score = 0;
     }
 
     // Update is called once per frame
@@ -55,16 +57,13 @@ public class Inventory : MonoBehaviour
         }
         if (other.gameObject.CompareTag("give"))
         {
-           
+            other.gameObject.GetComponent<Renderer>().material.color=Color.blue; 
             give = false;
         }
 
     }
 
-    void Items(float num)
-    {
-        ItemsText.text = num.ToString()+" items";
-    }
+  
 
     public IEnumerator Show()
     {
@@ -89,18 +88,20 @@ public class Inventory : MonoBehaviour
         {
             if (num < 5) 
             {
-                num = num + 5;
+                num = num + 1;
             }
         }
 
-        Items(num);
+      
 
         if (Input.GetMouseButtonDown(0) && give)
         {
             if (num >= 1)
                 num = num - 1;
+            score ++;
+           
         }
 
-        Items(num);
+        ItemsText.text = num.ToString() + " items";
     }
 }
