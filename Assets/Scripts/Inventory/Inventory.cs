@@ -8,10 +8,13 @@ using System;
 
 using UnityEditor.Experimental;
 using UnityEngine.SceneManagement;
+using UnityEditor.Rendering;
+using static UnityEngine.PlayerLoop.EarlyUpdate;
 
 
 public class Inventory : MonoBehaviour
 {
+    public static int score;
     [SerializeField]
     public
     TextMeshProUGUI _timeText;
@@ -23,11 +26,13 @@ public class Inventory : MonoBehaviour
     // Start is called before the first frame update
     float seconds = 30;
     bool timeUp = false;
-    
+    bool check = false;
+    int y = 0;
+    int g = 0;
+    bool visited = false;
     void Start()
     {
-        if (!ItemsText)
-            ItemsText = GetComponent<TextMeshProUGUI>();
+        score = 0;
     }
 
     // Update is called once per frame
@@ -43,6 +48,7 @@ public class Inventory : MonoBehaviour
         {
             recieve = false;
             give = true;
+            visited = true;
         }
     }
 
@@ -55,16 +61,15 @@ public class Inventory : MonoBehaviour
         }
         if (other.gameObject.CompareTag("give"))
         {
-           
+           // other.gameObject.GetComponent<Renderer>().material.color=Color.blue; 
+            Destroy(other.gameObject);
             give = false;
+            visited = false;
         }
 
     }
 
-    void Items(float num)
-    {
-        ItemsText.text = num.ToString()+" items";
-    }
+  
 
     public IEnumerator Show()
     {
@@ -91,16 +96,33 @@ public class Inventory : MonoBehaviour
             {
                 num = num + 5;
             }
+
+            if (num > 5)
+            {
+                num = 5;
+            }
+
+            check = false;
         }
 
-        Items(num);
+      
 
-        if (Input.GetMouseButtonDown(0) && give)
+        if (Input.GetMouseButtonDown(0) && give && visited)
         {
-            if (num >= 1)
+         
+            if (num >= 1  && g<=1)
+            {
                 num = num - 1;
+                y++;
+                g++;
+                visited = false;
+            }
+           
+                int h = y * 100;
+                score = h;
+            g = 0;
         }
 
-        Items(num);
+        ItemsText.text = num.ToString() + " items";
     }
 }

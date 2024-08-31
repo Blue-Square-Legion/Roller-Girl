@@ -157,11 +157,11 @@ MonoBehaviour:
   m_StreamingVersion: 20170927
   m_Priority: 10
   m_StandbyUpdate: 2
-  m_LookAt: {fileID: 0}
+  m_LookAt: {fileID: 1826739781}
   m_Follow: {fileID: 1826739781}
   m_Lens:
     FieldOfView: 34
-    OrthographicSize: 10
+    OrthographicSize: 12
     NearClipPlane: 0.3
     FarClipPlane: 1000
     Dutch: 0
@@ -228,7 +228,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 372.52856, y: -213}
+  m_AnchoredPosition: {x: 328.3, y: -186.2}
   m_SizeDelta: {x: 161.0623, y: 74.39}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &318325544
@@ -695,7 +695,7 @@ Camera:
   far clip plane: 1000
   field of view: 34
   orthographic: 1
-  orthographic size: 10
+  orthographic size: 12
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -903,7 +903,7 @@ MonoBehaviour:
   - {fileID: 1690373131}
   - {fileID: 1948742005}
   NPCList: []
-  NPCPrefab: {fileID: 4548450086750425304, guid: 35092ae5ffdf3164584731ad2be20061, type: 3}
+  NPCPrefab: {fileID: 7888073322939102339, guid: 2602916c2f462374cad8936eabfd803b, type: 3}
   totalSpawnCounts: 2
 --- !u!1 &792926262
 GameObject:
@@ -1318,7 +1318,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -281.30652, y: -213}
+  m_AnchoredPosition: {x: 18.4, y: -178}
   m_SizeDelta: {x: 282.5221, y: 74.3879}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1791972694
@@ -1734,7 +1734,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7692134761299340114, guid: d3de00e9cd21ff944a3c46109847d4dc, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -7.4
+      value: -3.78
       objectReference: {fileID: 0}
     - target: {fileID: 7692134761299340114, guid: d3de00e9cd21ff944a3c46109847d4dc, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1799,7 +1799,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1384569591672198755, guid: fc0ad1d81bcd9d64cbb76e9162620448, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 1384569591672198755, guid: fc0ad1d81bcd9d64cbb76e9162620448, type: 3}
       propertyPath: m_LocalPosition.z

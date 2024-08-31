@@ -1,9 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 using TMPro;
-using UnityEngine.UI;
+using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 public class ScoreScript : MonoBehaviour
 {
 
@@ -17,9 +15,9 @@ public class ScoreScript : MonoBehaviour
     {
         score = 0;
         Menue = gameObject.GetComponent<Button>();
-    
+
         Restart = gameObject.GetComponent<Button>();
-     
+
 
     }
     public void Menu()
@@ -31,22 +29,11 @@ public class ScoreScript : MonoBehaviour
         SceneManager.LoadScene("Main_Demo");
     }
 
-    public void SetScore(int scoreUpdate)
-    {
-
-        PlayerPrefs.SetInt("score",scoreUpdate);
-    }
-    public int GetScore(int score)
-    {
-       return PlayerPrefs.GetInt("score", score);
-    }
-
+   
     // Update is called once per frame
     void Update()
     {
-        if (score == 0)
-            SetScore(10);
-        int x = GetScore(score);
-        ScoreText.text = "The score is : " + x.ToString();
+
+        ScoreText.text ="The score is : " + Inventory.score.ToString();
     }
 }
