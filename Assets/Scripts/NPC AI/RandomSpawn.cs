@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Linq;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,7 +9,7 @@ public class RandomSpawn : MonoBehaviour
     [SerializeField] private List<GameObject> NPCList;
     [SerializeField] private GameObject NPCPrefab;
 
-    private int totalSpawnCounts = 3;
+    [SerializeField] private int totalSpawnCounts = 3;
     private bool isGameOver;
     private float spawnDelay = 0.5f;
 
@@ -22,11 +23,22 @@ public class RandomSpawn : MonoBehaviour
     {
         if (!isGameOver) 
         {
+            int index;
+            int[] usedindices = new int[totalSpawnCounts];
             for (int i = 0; i < totalSpawnCounts; i++)
             {
-                GameObject NPC = Instantiate(NPCPrefab, NPCSpawns[Random.Range(0, NPCSpawns.Count)].transform.position, Quaternion.identity);
+                do {
+                    index = Random.Range(0, NPCSpawns.Count);
+                    Debug.Log($"Can you see mee: {index}");
+                } while (usedindices.Contains(index)); 
+                usedindices[i] = index;
+                GameObject NPC = Instantiate(NPCPrefab, NPCSpawns[index].transform.position, Quaternion.identity);
                 NPCList.Add(NPC);
             }
+            foreach(var item in usedindices) {
+                Debug.Log(item);
+            }
+
             yield return new WaitForSeconds(spawnDelay);
         }
     }
