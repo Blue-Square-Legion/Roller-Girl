@@ -62,7 +62,11 @@ public class Inventory : MonoBehaviour
         if (other.gameObject.CompareTag("give"))
         {
            // other.gameObject.GetComponent<Renderer>().material.color=Color.blue; 
-            Destroy(other.gameObject);
+           if (visited == false) 
+           {
+                Destroy(other.gameObject);
+           }
+           
             give = false;
             visited = false;
         }
