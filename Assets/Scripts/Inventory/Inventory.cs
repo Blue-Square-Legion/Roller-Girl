@@ -26,7 +26,8 @@ public class Inventory : MonoBehaviour
     // Start is called before the first frame update
     float seconds = 30;
     bool timeUp = false;
-   
+    bool check = false;
+    int y = 0;
     void Start()
     {
         score = 0;
@@ -57,7 +58,7 @@ public class Inventory : MonoBehaviour
         }
         if (other.gameObject.CompareTag("give"))
         {
-            other.gameObject.GetComponent<Renderer>().material.color=Color.blue; 
+           // other.gameObject.GetComponent<Renderer>().material.color=Color.blue; 
             give = false;
         }
 
@@ -88,18 +89,26 @@ public class Inventory : MonoBehaviour
         {
             if (num < 5) 
             {
-                num = num + 1;
+                num = num + 5;
             }
+            check = false;
         }
 
       
 
         if (Input.GetMouseButtonDown(0) && give)
         {
-            if (num >= 1)
+            y++;
+            if (num >= 1 && !check)
+            {
                 num = num - 1;
-            score ++;
            
+               
+            }
+           
+                int h = y * 100;
+                score = h;
+            
         }
 
         ItemsText.text = num.ToString() + " items";
