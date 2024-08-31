@@ -62,6 +62,7 @@ public class Inventory : MonoBehaviour
         if (other.gameObject.CompareTag("give"))
         {
            // other.gameObject.GetComponent<Renderer>().material.color=Color.blue; 
+            Destroy(other.gameObject);
             give = false;
             visited = false;
         }
@@ -95,6 +96,12 @@ public class Inventory : MonoBehaviour
             {
                 num = num + 5;
             }
+
+            if (num > 5)
+            {
+                num = 5;
+            }
+
             check = false;
         }
 
