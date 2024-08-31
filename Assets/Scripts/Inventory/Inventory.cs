@@ -28,6 +28,8 @@ public class Inventory : MonoBehaviour
     bool timeUp = false;
     bool check = false;
     int y = 0;
+    int g = 0;
+    bool visited = false;
     void Start()
     {
         score = 0;
@@ -46,6 +48,7 @@ public class Inventory : MonoBehaviour
         {
             recieve = false;
             give = true;
+            visited = true;
         }
     }
 
@@ -60,6 +63,7 @@ public class Inventory : MonoBehaviour
         {
            // other.gameObject.GetComponent<Renderer>().material.color=Color.blue; 
             give = false;
+            visited = false;
         }
 
     }
@@ -96,19 +100,20 @@ public class Inventory : MonoBehaviour
 
       
 
-        if (Input.GetMouseButtonDown(0) && give)
+        if (Input.GetMouseButtonDown(0) && give && visited)
         {
-            y++;
-            if (num >= 1 && !check)
+         
+            if (num >= 1  && g<=1)
             {
                 num = num - 1;
-           
-               
+                y++;
+                g++;
+                visited = false;
             }
            
                 int h = y * 100;
                 score = h;
-            
+            g = 0;
         }
 
         ItemsText.text = num.ToString() + " items";
