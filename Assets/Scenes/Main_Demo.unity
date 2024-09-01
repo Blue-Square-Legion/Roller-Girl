@@ -849,6 +849,7 @@ GameObject:
   - component: {fileID: 788837222}
   - component: {fileID: 788837223}
   - component: {fileID: 788837224}
+  - component: {fileID: 788837226}
   m_Layer: 0
   m_Name: GameManger
   m_TagString: Untagged
@@ -883,7 +884,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4384e4b014d65a344a2661e5c490d88c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 0}
   _timeText: {fileID: 318325544}
+  count: 0
   ItemsText: {fileID: 1791972694}
 --- !u!114 &788837224
 MonoBehaviour:
@@ -905,6 +908,26 @@ MonoBehaviour:
   NPCList: []
   NPCPrefab: {fileID: 7888073322939102339, guid: 2602916c2f462374cad8936eabfd803b, type: 3}
   totalSpawnCounts: 2
+--- !u!114 &788837226
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 788837221}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 768da37ee0d760f448f517c99cf38749, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  num: {fileID: 788837224}
+  num2: {fileID: 788837223}
+  Player: {fileID: 790553690}
+--- !u!1 &790553690 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1597540849972189971, guid: fc0ad1d81bcd9d64cbb76e9162620448, type: 3}
+  m_PrefabInstance: {fileID: 6575994233016635616}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &792926262
 GameObject:
   m_ObjectHideFlags: 3
@@ -1786,6 +1809,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 120283450597442211, guid: fc0ad1d81bcd9d64cbb76e9162620448, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 790553690}
+    - target: {fileID: 120283450597442211, guid: fc0ad1d81bcd9d64cbb76e9162620448, type: 3}
       propertyPath: ItemsText
       value: 
       objectReference: {fileID: 1791972694}
@@ -1795,11 +1822,11 @@ PrefabInstance:
       objectReference: {fileID: 318325544}
     - target: {fileID: 1384569591672198755, guid: fc0ad1d81bcd9d64cbb76e9162620448, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 9.89
       objectReference: {fileID: 0}
     - target: {fileID: 1384569591672198755, guid: fc0ad1d81bcd9d64cbb76e9162620448, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.3
+      value: 7.08
       objectReference: {fileID: 0}
     - target: {fileID: 1384569591672198755, guid: fc0ad1d81bcd9d64cbb76e9162620448, type: 3}
       propertyPath: m_LocalPosition.z

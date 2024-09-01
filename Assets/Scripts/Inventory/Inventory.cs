@@ -14,10 +14,12 @@ using static UnityEngine.PlayerLoop.EarlyUpdate;
 
 public class Inventory : MonoBehaviour
 {
+    public GameObject player;
     public static int score;
     [SerializeField]
     public
     TextMeshProUGUI _timeText;
+    public static  int count2;
     public TextMeshProUGUI ItemsText;
     float f = 15f;
     float num = 0;
@@ -30,8 +32,10 @@ public class Inventory : MonoBehaviour
     int y = 0;
     int g = 0;
     bool visited = false;
+    bool numchg = false;
     void Start()
     {
+  
         score = 0;
     }
 
@@ -50,10 +54,12 @@ public class Inventory : MonoBehaviour
             give = true;
             visited = true;
         }
+      
     }
 
     void OnTriggerExit2D(Collider2D other)
     {
+        
         if (other.gameObject.CompareTag("recieve"))
         {
             recieve =false;
@@ -61,12 +67,17 @@ public class Inventory : MonoBehaviour
         }
         if (other.gameObject.CompareTag("give"))
         {
-           // other.gameObject.GetComponent<Renderer>().material.color=Color.blue; 
-           if (visited == false) 
-           {
+            // other.gameObject.GetComponent<Renderer>().material.color=Color.blue; 
+            if (!visited)
+            {
+
+               
+
                 Destroy(other.gameObject);
-           }
+                count2 = count2 + 1;
+            }
            
+
             give = false;
             visited = false;
         }
@@ -82,12 +93,14 @@ public class Inventory : MonoBehaviour
     }
 
     void Update()
-    {
+    { if (Input.GetKeyDown(KeyCode.Escape))
+           player.transform.position = new Vector2(transform.position.x, transform.position.y - 2f);
 
         if (seconds <= 30 && seconds>=0)
         {
             _timeText.text = UnityEngine.Mathf.RoundToInt(seconds).ToString();
             seconds -= Time.deltaTime;
+          
             if (UnityEngine.Mathf.RoundToInt(seconds).ToString() == "0")
                 StartCoroutine(Show());  
             if (seconds == 0)
@@ -111,18 +124,21 @@ public class Inventory : MonoBehaviour
 
       
 
-        if (Input.GetMouseButtonDown(0) && give && visited)
+        if (Input.GetMouseButtonDown(0) && give)
         {
-         
             if (num >= 1  && g<=1)
             {
                 num = num - 1;
+               
+               
+             
                 y++;
                 g++;
                 visited = false;
             }
-           
-                int h = y * 100;
+
+            numchg = false;
+            int h = y * 100;
                 score = h;
             g = 0;
         }
