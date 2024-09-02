@@ -45,7 +45,6 @@ public class PlayerMovement : MonoBehaviour
         }
 
         sr.flipX = rb.velocity.x < 0f;
-        Debug.Log(IsGrounded() + ":" + rb.velocity);
         anim.SetBool("isGrounded", IsGrounded());
 
         if(IsGrounded() && rb.velocity != Vector2.zero)
