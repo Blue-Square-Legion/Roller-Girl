@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine.UIElements;
 using UnityEngine.SceneManagement;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class MainMenuUI : MonoBehaviour
 {
@@ -23,8 +24,15 @@ public class MainMenuUI : MonoBehaviour
     private VisualElement mainMenu;
     private VisualElement settingsScreen;
     private VisualElement audioOptions;
-    private VisualElement controlsScreen;
-    private VisualElement displayOptions;
+    //private VisualElement controlsScreen;
+    //private VisualElement displayOptions;
+
+    //
+    public AudioMixer theMixer;
+
+    private Label mastLabel, musicLabel, sfxLabel;
+    private Slider mastSlider, musicSlider, sfxSlider;
+    //
 
     void Start()
     {
@@ -67,6 +75,28 @@ public class MainMenuUI : MonoBehaviour
         audioOptions.style.display = DisplayStyle.None;
         //contolScreen.style.display = DisplayStyle.None;
         //displayOptions.style.display = DisplayStyle.None;
+
+        /*
+        mastLabel = root.Q<Label>("MasterVol");
+        musicLabel = root.Q<Label>("MusicVol");
+        sfxLabel = root.Q<Label>("SFXVol");
+
+        mastSlider = root.Q<Slider>("MasterSlider");
+        musicSlider = root.Q<Slider>("MusicSlider");
+        sfxSlider = root.Q<Slider>("SFXSlider");
+
+        float vol = 0f;
+        theMixer.GetFloat("", out vol);
+        mastSlider.value = vol;
+        theMixer.GetFloat("", out vol);
+        musicSlider.value = vol;
+        theMixer.GetFloat("", out vol);
+        sfxSlider.value = vol;
+
+        mastLabel.text = Mathf.RoundToInt(mastSlider.value + 80).ToString();
+        musicLabel.text = Mathf.RoundToInt(musicSlider.value + 80).ToString();
+        sfxLabel.text = Mathf.RoundToInt(sfxSlider.value + 80).ToString();
+        */
     }
     private void OnPresstoStartButtonClicked(ClickEvent clickEvent)
     {
@@ -84,5 +114,32 @@ public class MainMenuUI : MonoBehaviour
     private void OnSettingsBackButtonClicked(ClickEvent clickEvent) { mainMenu.style.display = DisplayStyle.Flex; settingsScreen.style.display = DisplayStyle.None; }
 
     private void OnAudioOptionsBackButtonClicked(ClickEvent clickEvent) { settingsScreen.style.display = DisplayStyle.Flex; audioOptions.style.display = DisplayStyle.None; }
+    /*
+    public void SetMaterVol()
+    {
+        mastLabel.text = Mathf.RoundToInt(mastSlider.value + 80).ToString();
 
+        theMixer.SetFloat("MasterVol", mastSlider.value);
+
+        PlayerPrefs.SetFloat("MasterVol", mastSlider.value);
+    }
+
+    public void SetMusicVol()
+    {
+        musicLabel.text = Mathf.RoundToInt(musicSlider.value + 80).ToString();
+
+        theMixer.SetFloat("MusicVol", musicSlider.value);
+
+        PlayerPrefs.SetFloat("MusicVol", musicSlider.value);
+    }
+
+    public void SetSFXVol()
+    {
+        sfxLabel.text = Mathf.RoundToInt(sfxSlider.value + 80).ToString();
+
+        theMixer.SetFloat("SFXVol", sfxSlider.value);
+
+        PlayerPrefs.SetFloat("SFXVol", sfxSlider.value);
+    }
+    */
 }
