@@ -95,10 +95,10 @@ public class Inventory : MonoBehaviour
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.S))
-            player.transform.position = new Vector2(player.transform.position.x, player.transform.position.y - 1f);
+            player.transform.position = new Vector2(player.transform.position.x, player.transform.position.y - 3f);
         
         if (Input.GetKeyDown(KeyCode.W))
-            player.transform.position = new Vector2(player.transform.position.x, player.transform.position.y + 1f);
+            player.transform.position = new Vector2(player.transform.position.x, player.transform.position.y + 3f);
 
         if (seconds <= 30 && seconds >= 0)
         {
