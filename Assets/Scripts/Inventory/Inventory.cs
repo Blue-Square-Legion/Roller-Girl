@@ -14,10 +14,12 @@ using static UnityEngine.PlayerLoop.EarlyUpdate;
 
 public class Inventory : MonoBehaviour
 {
+    public GameObject player;
     public static int score;
     [SerializeField]
     public
     TextMeshProUGUI _timeText;
+    public static int count2;
     public TextMeshProUGUI ItemsText;
     float f = 15f;
     float num = 0;
@@ -30,8 +32,10 @@ public class Inventory : MonoBehaviour
     int y = 0;
     int g = 0;
     bool visited = false;
+    bool numchg = false;
     void Start()
     {
+
         score = 0;
     }
 
@@ -50,53 +54,66 @@ public class Inventory : MonoBehaviour
             give = true;
             visited = true;
         }
+
     }
 
     void OnTriggerExit2D(Collider2D other)
     {
+
         if (other.gameObject.CompareTag("recieve"))
         {
-            recieve =false;
-            
+            recieve = false;
+
         }
         if (other.gameObject.CompareTag("give"))
         {
-           // other.gameObject.GetComponent<Renderer>().material.color=Color.blue; 
-           if (visited == false) 
-           {
+            // other.gameObject.GetComponent<Renderer>().material.color=Color.blue; 
+            if (!visited)
+            {
+
+
+
                 Destroy(other.gameObject);
-           }
-           
+                count2 = count2 + 1;
+            }
+
+
             give = false;
             visited = false;
         }
 
     }
 
-  
+
 
     public IEnumerator Show()
     {
         SceneManager.LoadScene("ScoreScene");
-        yield return new WaitForSeconds(f);   
+        yield return new WaitForSeconds(f);
     }
 
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.S))
+            player.transform.position = new Vector2(player.transform.position.x, player.transform.position.y - 1f);
+        
+        if (Input.GetKeyDown(KeyCode.W))
+            player.transform.position = new Vector2(player.transform.position.x, player.transform.position.y + 1f);
 
-        if (seconds <= 30 && seconds>=0)
+        if (seconds <= 30 && seconds >= 0)
         {
             _timeText.text = UnityEngine.Mathf.RoundToInt(seconds).ToString();
             seconds -= Time.deltaTime;
+
             if (UnityEngine.Mathf.RoundToInt(seconds).ToString() == "0")
-                StartCoroutine(Show());  
+                StartCoroutine(Show());
             if (seconds == 0)
                 timeUp = true;
         }
 
         if (Input.GetMouseButtonDown(0) && recieve)
         {
-            if (num < 5) 
+            if (num < 5)
             {
                 num = num + 5;
             }
@@ -109,21 +126,24 @@ public class Inventory : MonoBehaviour
             check = false;
         }
 
-      
 
-        if (Input.GetMouseButtonDown(0) && give && visited)
+
+        if (Input.GetMouseButtonDown(0) && give)
         {
-         
-            if (num >= 1  && g<=1)
+            if (num >= 1 && g <= 1&&visited)
             {
                 num = num - 1;
+
+
+
                 y++;
                 g++;
                 visited = false;
             }
-           
-                int h = y * 100;
-                score = h;
+
+            numchg = false;
+            int h = y * 100;
+            score = h;
             g = 0;
         }
 
