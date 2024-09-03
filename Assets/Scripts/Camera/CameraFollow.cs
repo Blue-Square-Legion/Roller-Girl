@@ -4,19 +4,19 @@ using UnityEngine;
 
 public class Follow_player : MonoBehaviour {
 
-    [SerializeField] GameObject player;
+    public GameObject player;
 
-    [SerializeField] float timeOffset;
+    public float timeOffset;
 
-    [SerializeField] Vector2 posOffset;
+    public Vector2 posOffset;
 
-    [SerializeField] float leftLimit;
+    public float leftLimit;
 
-    [SerializeField] float rightLimit;
+    public float rightLimit;
 
-    [SerializeField] float bottomLimit;
+    public float bottomLimit;
 
-    [SerializeField] float topLimit;
+    public float topLimit;
 
     private Vector3 velocity;
 
