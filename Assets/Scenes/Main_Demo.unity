@@ -672,6 +672,7 @@ GameObject:
   - component: {fileID: 788837222}
   - component: {fileID: 788837223}
   - component: {fileID: 788837224}
+  - component: {fileID: 788837225}
   m_Layer: 0
   m_Name: GameManger
   m_TagString: Untagged
@@ -729,8 +730,19 @@ MonoBehaviour:
   - {fileID: 1631469807}
   NPCList: []
   NPCPrefab: {fileID: 7888073322939102339, guid: 2602916c2f462374cad8936eabfd803b, type: 3}
-  totalSpawnCounts: 3
-  copySpawn: 0
+  totalSpawnCounts: 1
+--- !u!114 &788837225
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 788837221}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 768da37ee0d760f448f517c99cf38749, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &927008110
 GameObject:
   m_ObjectHideFlags: 0

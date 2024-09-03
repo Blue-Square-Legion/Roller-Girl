@@ -33,6 +33,7 @@ public class Inventory : MonoBehaviour
     int g = 0;
     bool visited = false;
     bool numchg = false;
+    public static bool _try = false;
     void Start()
     {
 
@@ -75,6 +76,9 @@ public class Inventory : MonoBehaviour
 
                 Destroy(other.gameObject);
                 count2 = count2 + 1;
+                _try = true;
+               
+            
             }
 
 
