@@ -24,7 +24,7 @@ public class Inventory : MonoBehaviour
     bool recieve = false;
     bool give = false;
     // Start is called before the first frame update
-    float seconds = 1000;
+    float seconds = 30;
     bool timeUp = false;
     bool check = false;
     int y = 0;
