@@ -16,6 +16,11 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundLayer;
 
+    [SerializeField] float rightBorderXValue;
+    [SerializeField] float leftBorderXValue;
+
+    
+
     private Animator anim;
     private SpriteRenderer sr;
 
@@ -29,8 +34,8 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         UnityEngine.Vector3 screenPos = Camera.main.WorldToScreenPoint(transform.position);
-        float rightSideOfScreenInWorld = Camera.main.ScreenToWorldPoint(new UnityEngine.Vector2(Screen.width, Screen.height)).x;
-        float leftSideOfScreenInWorld = Camera.main.ScreenToWorldPoint(new UnityEngine.Vector2(0f, 0f)).x;
+        float rightSideOfScreenInWorld = rightBorderXValue;
+        float leftSideOfScreenInWorld = leftBorderXValue;
 
         float TopOfScreenInWorld = Camera.main.ScreenToWorldPoint(new UnityEngine.Vector2(Screen.width, Screen.height)).y;
         float bottomOfScreenInWorld = Camera.main.ScreenToWorldPoint(new UnityEngine.Vector2(0f, 0f)).y;
