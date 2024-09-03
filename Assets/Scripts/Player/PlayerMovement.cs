@@ -1,9 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Numerics;
 using UnityEngine;
 using UnityEngine.Analytics;
 
+[RequireComponent(typeof(Rigidbody2D), typeof(Animator))]
 public class PlayerMovement : MonoBehaviour
 {
     float horizontal;
@@ -21,9 +21,13 @@ public class PlayerMovement : MonoBehaviour
 
     
 
+    private Animator anim;
+    private SpriteRenderer sr;
 
     void Start()
     {
+        sr = GetComponent<SpriteRenderer>();
+        anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
     }
 
@@ -43,6 +47,20 @@ public class PlayerMovement : MonoBehaviour
         else if (screenPos.x >= Screen.width && rb.velocity.x > 0)
         {
             transform.position = new UnityEngine.Vector2(leftSideOfScreenInWorld, transform.position.y);
+        }
+
+        sr.flipX = rb.velocity.x < 0f;
+        anim.SetBool("isGrounded", IsGrounded());
+
+        if(IsGrounded() && rb.velocity != Vector2.zero)
+        {
+            Debug.Log("Passed 1");
+            anim.SetBool("canRun", true);
+        }
+        else
+        {
+            Debug.Log("Passed 2");
+            anim.SetBool("canRun", false);
         }
        // else if (screenPos.y > Screen.height && rb.velocity.y > 0)
        // {
@@ -64,6 +82,7 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetButtonDown("Jump") && IsGrounded())
         {
             rb.velocity = new UnityEngine.Vector2(rb.velocity.x, jumpPower);
+            anim.Play("Jump");
         }
 
         if (Input.GetButtonUp("Jump") && rb.velocity.y > 0f)
