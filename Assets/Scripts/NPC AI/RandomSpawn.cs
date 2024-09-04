@@ -9,10 +9,10 @@ public class RandomSpawn : MonoBehaviour
     [SerializeField] private List<GameObject> NPCList;
     [SerializeField] private GameObject NPCPrefab;
 
-    [SerializeField] public int totalSpawnCounts = 2;
+    [SerializeField] public int totalSpawnCounts = 1;
     private bool isGameOver;
     private float spawnDelay = 0.5f;
-    [SerializeField] public int copySpawn;
+    [SerializeField] public static int copySpawn;
     // Start is called before the first frame update
     void Start()
     {

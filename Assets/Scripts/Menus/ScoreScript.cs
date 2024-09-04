@@ -14,9 +14,9 @@ public class ScoreScript : MonoBehaviour
     void Start()
     {
         score = 0;
-        Menue = gameObject.GetComponent<Button>();
+      //  Menue = gameObject.GetComponent<Button>();
 
-        Restart = gameObject.GetComponent<Button>();
+     //   Restart = gameObject.GetComponent<Button>();
 
 
     }
@@ -27,6 +27,7 @@ public class ScoreScript : MonoBehaviour
     public void Main_Demo()
     {
         SceneManager.LoadScene("Main_Demo");
+        Inventory._check = false;
     }
 
    
