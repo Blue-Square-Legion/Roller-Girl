@@ -297,7 +297,7 @@ GameObject:
   - component: {fileID: 2016301800666293812}
   - component: {fileID: 5878619317549888686}
   m_Layer: 0
-  m_Name: parallax_jump_issue
+  m_Name: parallax
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
