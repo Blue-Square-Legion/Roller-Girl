@@ -19,6 +19,7 @@ public class MainMenu : MonoBehaviour
     public void Begin()
     {
         SceneManager.LoadScene("Main_Demo");
+        Inventory._check = false;
     }
     public void End()
     {

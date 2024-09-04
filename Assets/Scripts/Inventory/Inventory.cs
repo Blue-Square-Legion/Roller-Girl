@@ -33,10 +33,10 @@ public class Inventory : MonoBehaviour
     int g = 0;
     bool visited = false;
     bool numchg = false;
-    public static bool _try = false;
+    public static bool _check = false;
     void Start()
     {
-
+        count2 = 0;
         score = 0;
     }
 
@@ -75,12 +75,13 @@ public class Inventory : MonoBehaviour
 
 
                 Destroy(other.gameObject);
+              
                 count2 = count2 + 1;
-                _try = true;
+           
                
             
             }
-
+            _check = true;
 
             give = false;
             visited = false;
@@ -127,7 +128,7 @@ public class Inventory : MonoBehaviour
                 num = 5;
             }
 
-            check = false;
+           
         }
 
 
@@ -137,7 +138,7 @@ public class Inventory : MonoBehaviour
             if (num >= 1 && g <= 1&&visited)
             {
                 num = num - 1;
-
+                check = true;
 
 
                 y++;
@@ -150,7 +151,7 @@ public class Inventory : MonoBehaviour
             score = h;
             g = 0;
         }
-
+      
         ItemsText.text = num.ToString() + " items";
     }
 }
