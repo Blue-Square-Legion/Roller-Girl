@@ -9,7 +9,7 @@ public class RandomSpawn : MonoBehaviour
     [SerializeField] private List<GameObject> NPCSpawns;
     [SerializeField] private List<GameObject> NPCList;
     [SerializeField] private GameObject NPCPrefab;
-    float z;
+    public static float z;
    [SerializeField] public int totalSpawnCounts = 1;
     private bool isGameOver;
     private float spawnDelay = 0.5f;
