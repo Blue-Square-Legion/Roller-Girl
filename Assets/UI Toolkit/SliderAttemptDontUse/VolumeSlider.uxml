@@ -1,0 +1,4 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI%20Toolkit/VolumeSliderStyle.uss?fileID=7433441132597879392&amp;guid=385c24cd8b4b3a14fa39cc4927d54f5c&amp;type=3#VolumeSliderStyle" />
+    <ui:Slider high-value="100" name="VolumeSlider" style="width: 100%; background-color: rgba(0, 0, 0, 0); background-image: url(&quot;project://database/Assets/UI%20Toolkit/UI-Art/Slider_Dark.png?fileID=21300000&amp;guid=6b79463b4e78f694ab7cad6dd9fe40a3&amp;type=3#Slider_Dark&quot;); color: rgba(27, 27, 27, 0); height: 80px; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0;" />
+</ui:UXML>

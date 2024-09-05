@@ -24,18 +24,13 @@ public class MainMenuUI : MonoBehaviour
     private VisualElement mainMenu;
     private VisualElement settingsScreen;
     private VisualElement audioOptions;
+    public GameObject optionsScreen;
     //private VisualElement controlsScreen;
     //private VisualElement displayOptions;
 
-    //
-    public AudioMixer theMixer;
-
-    private Label mastLabel, musicLabel, sfxLabel;
-    private Slider mastSlider, musicSlider, sfxSlider;
-    //
-
     void Start()
     {
+        optionsScreen.SetActive(false);
         VisualElement root = GetComponent<UIDocument>().rootVisualElement;
 
         presstoStartButton = root.Q<Button>("PresstoStartButton");
@@ -73,6 +68,8 @@ public class MainMenuUI : MonoBehaviour
         mainMenu.style.display = DisplayStyle.None;
         settingsScreen.style.display = DisplayStyle.None;
         audioOptions.style.display = DisplayStyle.None;
+
+
         //contolScreen.style.display = DisplayStyle.None;
         //displayOptions.style.display = DisplayStyle.None;
 
@@ -110,36 +107,21 @@ public class MainMenuUI : MonoBehaviour
     private void OnQuitButtonClicked(ClickEvent clickEvent) { Application.Quit(); }
 
     //private void OnDisplayButtonClicked(ClickEvent clickEvent) { /*displayOptions.style.display = DisplayStyle.Flex; */}
-    private void OnAudioOptionsButtonClicked(ClickEvent clickEvent) { audioOptions.style.display = DisplayStyle.Flex; settingsScreen.style.display = DisplayStyle.None; }
-    private void OnSettingsBackButtonClicked(ClickEvent clickEvent) { mainMenu.style.display = DisplayStyle.Flex; settingsScreen.style.display = DisplayStyle.None; }
-
-    private void OnAudioOptionsBackButtonClicked(ClickEvent clickEvent) { settingsScreen.style.display = DisplayStyle.Flex; audioOptions.style.display = DisplayStyle.None; }
-    /*
-    public void SetMaterVol()
-    {
-        mastLabel.text = Mathf.RoundToInt(mastSlider.value + 80).ToString();
-
-        theMixer.SetFloat("MasterVol", mastSlider.value);
-
-        PlayerPrefs.SetFloat("MasterVol", mastSlider.value);
+    private void OnAudioOptionsButtonClicked(ClickEvent clickEvent) 
+    {   optionsScreen.SetActive(true); 
+        audioOptions.style.display = DisplayStyle.Flex; 
+        settingsScreen.style.display = DisplayStyle.None; 
+    }
+    private void OnSettingsBackButtonClicked(ClickEvent clickEvent) 
+    { 
+        mainMenu.style.display = DisplayStyle.Flex; 
+        settingsScreen.style.display = DisplayStyle.None; 
     }
 
-    public void SetMusicVol()
-    {
-        musicLabel.text = Mathf.RoundToInt(musicSlider.value + 80).ToString();
-
-        theMixer.SetFloat("MusicVol", musicSlider.value);
-
-        PlayerPrefs.SetFloat("MusicVol", musicSlider.value);
+    private void OnAudioOptionsBackButtonClicked(ClickEvent clickEvent) 
+    { 
+        optionsScreen.SetActive(false); 
+        settingsScreen.style.display = DisplayStyle.Flex; 
+        audioOptions.style.display = DisplayStyle.None; 
     }
-
-    public void SetSFXVol()
-    {
-        sfxLabel.text = Mathf.RoundToInt(sfxSlider.value + 80).ToString();
-
-        theMixer.SetFloat("SFXVol", sfxSlider.value);
-
-        PlayerPrefs.SetFloat("SFXVol", sfxSlider.value);
-    }
-    */
 }
