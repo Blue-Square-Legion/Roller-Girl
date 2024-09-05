@@ -26,7 +26,7 @@ public class Inventory : MonoBehaviour
     bool recieve = false;
     bool give = false;
     // Start is called before the first frame update
-    float seconds = 30;
+    float seconds = 100;
     bool timeUp = false;
     bool check = false;
     int y = 0;
@@ -105,7 +105,7 @@ public class Inventory : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.W))
             player.transform.position = new Vector2(player.transform.position.x, player.transform.position.y + 3f);
 
-        if (seconds <= 30 && seconds >= 0)
+        if (seconds <= 100 && seconds >= 0)
         {
             _timeText.text = UnityEngine.Mathf.RoundToInt(seconds).ToString();
             seconds -= Time.deltaTime;
