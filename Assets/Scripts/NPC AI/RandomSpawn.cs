@@ -2,20 +2,22 @@ using System.Collections;
 using System.Linq;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class RandomSpawn : MonoBehaviour
 {
     [SerializeField] private List<GameObject> NPCSpawns;
     [SerializeField] private List<GameObject> NPCList;
     [SerializeField] private GameObject NPCPrefab;
-
-    [SerializeField] public int totalSpawnCounts = 1;
+    public static float z;
+   [SerializeField] public int totalSpawnCounts = 1;
     private bool isGameOver;
     private float spawnDelay = 0.5f;
+    public TextMeshProUGUI NPCText;
     [SerializeField] public static int copySpawn;
     // Start is called before the first frame update
     void Start()
-    {
+    {   z= totalSpawnCounts;
         copySpawn = totalSpawnCounts;
         StartCoroutine(SpawnNPC());
     }
@@ -44,5 +46,9 @@ public class RandomSpawn : MonoBehaviour
 
             yield return new WaitForSeconds(spawnDelay);
         }
+    }
+    private void Update()
+    {
+        NPCText.text = z.ToString() + " : NPCs";
     }
 }

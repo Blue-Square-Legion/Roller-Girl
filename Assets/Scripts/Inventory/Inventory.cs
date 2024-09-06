@@ -77,6 +77,7 @@ public class Inventory : MonoBehaviour
                 Destroy(other.gameObject);
               
                 count2 = count2 + 1;
+                RandomSpawn.z = RandomSpawn.z - 1;
            
                
             
