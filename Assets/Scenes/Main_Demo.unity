@@ -512,6 +512,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -57
       objectReference: {fileID: 0}
+    - target: {fileID: 1806077535978850759, guid: bca7215a276d20046995f9c8a622a5c0, type: 3}
+      propertyPath: m_Texture
+      value: 
+      objectReference: {fileID: 2800000, guid: b796adde939df4fafbbc5e0418cfd562, type: 3}
     - target: {fileID: 3647669978739119274, guid: bca7215a276d20046995f9c8a622a5c0, type: 3}
       propertyPath: m_Name
       value: HUD-Overlay
@@ -1334,7 +1338,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 7
   m_Sprite: {fileID: -1688662798, guid: a8321506a8d0c90449b72c22144f2e68, type: 3}
-  m_Color: {r: 0.9184807, g: 0.11527941, b: 0.96981126, a: 1}
+  m_Color: {r: 0.94036674, g: 0, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
