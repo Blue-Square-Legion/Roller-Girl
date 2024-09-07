@@ -1262,8 +1262,8 @@ GameObject:
   - component: {fileID: 1029951525}
   - component: {fileID: 1029951530}
   - component: {fileID: 1029951529}
-  - component: {fileID: 1029951531}
   - component: {fileID: 1029951528}
+  - component: {fileID: 1029951531}
   m_Layer: 0
   m_Name: Roller-Girl
   m_TagString: Untagged
@@ -1433,7 +1433,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 1029951524}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: b89cbbdd53c6ca741b620d240a5b015e, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -1456,7 +1456,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.13}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -1467,7 +1467,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.25, y: 3.85}
+  m_Size: {x: 1.8670908, y: 3.7933335}
   m_EdgeRadius: 0
 --- !u!1 &1093842006
 GameObject:
