@@ -1,0 +1,64 @@
+#VolumeSlider Label {
+}
+
+#VolumeSlider #unity-drag-container {
+    background-color: rgb(255, 102, 102);
+    border-top-width: 0;
+    border-right-width: 0;
+    border-bottom-width: 0;
+    border-left-width: 0;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    margin-right: 40px;
+    margin-left: 40px;
+    overflow: hidden;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+}
+
+#VolumeSlider #unity-tracker {
+    background-color: rgb(105, 13, 13);
+    flex-grow: 1;
+    position: relative;
+    top: 0;
+    margin-top: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+    border-top-width: 0;
+    border-right-width: 0;
+    border-bottom-width: 0;
+    border-left-width: 0;
+}
+
+#VolumeSlider #unity-dragger {
+    background-color: rgb(255, 157, 157);
+    border-top-width: 0;
+    border-right-width: 0;
+    border-bottom-width: 0;
+    border-left-width: 0;
+    width: 20px;
+    height: 100%;
+    top: 0;
+    margin-top: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+}
+
+.bar {
+    width: 2000px;
+    height: 100%;
+    background-color: rgb(255, 132, 132);
+    align-self: flex-end;
+}
+
+.newdragger {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    background-color: rgb(0, 95, 255);
+    background-image: url("project://database/Assets/UI%20Toolkit/UI-Art/Slider_Dragger.png?fileID=2800000&guid=0c951d03bed64f649a234fc9f746a896&type=3#Slider_Dragger");
+}
