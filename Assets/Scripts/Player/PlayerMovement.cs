@@ -98,6 +98,11 @@ public class PlayerMovement : MonoBehaviour
     {
 
         rb.velocity = new UnityEngine.Vector2(horizontal * speed * acceleration, rb.velocity.y);
+       
+    }
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        horizontal = -horizontal;
     }
 
     private bool IsGrounded()
