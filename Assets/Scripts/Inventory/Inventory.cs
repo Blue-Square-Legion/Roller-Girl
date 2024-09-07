@@ -117,7 +117,7 @@ public class Inventory : MonoBehaviour
                 timeUp = true;
         }
 
-        if (Input.GetMouseButtonDown(0) && recieve)
+        if (Input.GetKeyDown(KeyCode.E) && recieve)
         {
             if (num < 5)
             {
@@ -134,7 +134,7 @@ public class Inventory : MonoBehaviour
 
 
 
-        if (Input.GetMouseButtonDown(0) && give)
+        if (Input.GetKeyDown(KeyCode.E) && give)
         {
             if (num >= 1 && g <= 1&&visited)
             {
