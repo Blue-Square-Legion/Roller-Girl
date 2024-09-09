@@ -142,6 +142,6 @@ public class PauseUI : MonoBehaviour
     private void OnControlScreenBackButtonClicked(ClickEvent clickEvent)
     {
         controlsScreen.style.display = DisplayStyle.None;
-        settingsScreen.style.display = DisplayStyle.Flex;
+        mainMenu.style.display = DisplayStyle.Flex;
     }
 }
