@@ -8,7 +8,7 @@
                 <ui:Button text="Settings" parse-escape-sequences="true" display-tooltip-when-elided="true" name="SettingsButton" class="menuButton" style="right: auto; left: -16px;" />
                 <ui:Button text="Controls" parse-escape-sequences="true" display-tooltip-when-elided="true" name="ControlsButton" class="menuButton" style="right: 39px;" />
                 <ui:Button text="MainMenu" parse-escape-sequences="true" display-tooltip-when-elided="true" name="MainMenuButton" class="menuButton" style="right: 77px;" />
-                <ui:Button text="Quit Game" parse-escape-sequences="true" display-tooltip-when-elided="true" name="QuitButton" class="menuButton" style="right: 127px;" />
+                <ui:Button text="Quit Game" parse-escape-sequences="true" display-tooltip-when-elided="true" name="QuitButton" class="menuButton" style="right: 127px; display: none;" />
             </ui:VisualElement>
         </ui:VisualElement>
         <ui:VisualElement name="AudioOptions" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/UI%20Toolkit/UI-Art/Roller%20Girl-border%201.png?fileID=21300000&amp;guid=328225af521b2b644935c09c9d02444f&amp;type=3#Roller Girl-border 1&quot;); display: none;">
